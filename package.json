@@ -6,7 +6,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
     "@mdi/font": "^7.2.96",
@@ -22,5 +23,8 @@
     "vue-easy-lightbox": "^1.16.0",
     "vue3-google-map": "^0.15.0",
     "vuetify": "^3.3.0"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
