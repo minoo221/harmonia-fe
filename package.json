@@ -3,15 +3,15 @@
   "private": true,
   "engines": {
     "node": "16.x",
-    "npm": "9.6.3"
+    "npm": "9.x"
   },
   "scripts": {
-    "build": "nuxt build",
+    "build": "node_modules/nuxt/bin/nuxt.js build -c ./nuxt.config.js",
+    "start": "node_modules/nuxt/bin/nuxt.js start -c ./nuxt.config.js",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "start": "node .output/server/index.mjs"
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@mdi/font": "^7.2.96",
