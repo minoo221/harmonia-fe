@@ -3,11 +3,11 @@
   "private": true,
   "scripts": {
     "build": "node_modules/nuxt/bin/nuxt.js build -c ./nuxt.config.js",
+    "start": "node_modules/nuxt/bin/nuxt.js start -c ./nuxt.config.js",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "start": "node_modules/nuxt/bin/nuxt.js start -c ./nuxt.config.js"
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@mdi/font": "^7.2.96",
