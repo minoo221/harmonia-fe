@@ -1,6 +1,10 @@
 {
   "name": "nuxt-app",
   "private": true,
+  "engines": {
+    "node": "16.x",
+    "npm": "9.6.3"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -23,9 +27,5 @@
     "vue-easy-lightbox": "^1.16.0",
     "vue3-google-map": "^0.15.0",
     "vuetify": "^3.3.0"
-  },
-  "engines": {
-    "node": "16.x",
-    "npm": "9.6.3"
   }
 }
