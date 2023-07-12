@@ -46,7 +46,7 @@
                 <div v-for="(item, index) in menu" :key="index">
                   <v-btn
                     v-if="item.isReservation"
-                    exact-active-class="menu-item-active"
+                    exact
                     class="mx-2"
                     color="primary"
                     link
@@ -56,16 +56,7 @@
                   >
                     {{ item.title }}
                   </v-btn>
-                  <v-btn
-                    v-else
-                    exact-active-class="menu-item-active"
-                    class="mx-2"
-                    color="white"
-                    link
-                    :to="item.to"
-                    variant="plain"
-                    nuxt
-                  >
+                  <v-btn v-else exact class="mx-2" color="white" link :to="item.to" variant="plain" nuxt>
                     {{ item.title }}
                   </v-btn>
                 </div>
