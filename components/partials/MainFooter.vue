@@ -20,7 +20,7 @@
           <v-col cols="12" md="2" offset-md="2">
             <h2 class="mx-4">Odkazy</h2>
             <v-list nav bg-color="transparent" density="compact" color="white">
-              <v-list-item v-for="(item, i) in menu" :key="i" nav base-color="white" link color="#fff">
+              <v-list-item v-for="(item, i) in menu" :key="i" :to="item.to" nuxt nav base-color="white" link color="#fff">
                 <v-list-item-title v-text="item.title"></v-list-item-title>
               </v-list-item>
             </v-list>
