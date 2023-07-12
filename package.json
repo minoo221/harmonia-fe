@@ -6,7 +6,7 @@
     "npm": "9.x"
   },
   "scripts": {
-    "build": "npx nuxi clean|cleanup [rootDir] && nuxt build",
+    "build": "npx nuxi clean [rootDir] && nuxt build",
     "start": "node .output/server/index.mjs",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
