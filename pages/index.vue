@@ -75,7 +75,7 @@ const images: Ref<any> = ref([]);
 
 const { findOne, find } = useStrapi();
 const { data: gallery, refresh: refreshGalleries } = await useAsyncData("galleries", () =>
-  findOne<Gallery>("galleries", 3, {
+  findOne<Gallery>("galleries", 6, {
     populate: "*",
   })
 );
