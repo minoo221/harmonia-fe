@@ -152,7 +152,7 @@ onMounted(() => {
         padding: 0 20px;
         height: 250px;
         overflow: hidden;
-        img {
+        .v-img {
           width: 450px;
         }
       }
