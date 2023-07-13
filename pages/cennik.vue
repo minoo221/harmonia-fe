@@ -5,7 +5,7 @@
         <v-col cols="12" md="4">
           <v-card>
             <v-card-title class="primary white--text py-4"> Mimosezóna </v-card-title>
-            <v-card-subtitle>3. 1. - 25. 1. a 3. 1. - 25. 1. a 1.9 - 22. 12.</v-card-subtitle>
+            <v-card-subtitle>3. 1. - 25. 1. a 1. 3. - 15. 6. a 1.9 - 22. 12.</v-card-subtitle>
             <v-card-text>
               <v-table>
                 <thead>
@@ -98,7 +98,7 @@
         </v-col>
         <v-col cols="12" md="4">
           <v-card>
-            <v-card-title class="primary white--text py-4"> Mimo sezóna </v-card-title>
+            <v-card-title class="primary white--text py-4"> Špeciálna ponuka </v-card-title>
             <v-card-subtitle>1. 6. - 15. 6.</v-card-subtitle>
             <v-card-text>
               <v-table>
@@ -154,13 +154,14 @@
           <p>Check in (nástup na pobyt) - 14:<sup>00</sup> - 22:<sup>00</sup> - neskorší čas po nahlásení za extra príplatok</p>
           <p>Check out (odhlásenie z pobytu) - do 10:<sup>00</sup> hod. - neskorší odchod len po dohode za extra príplatok</p>
           <p>Domáce zvieratá - po dohode za príplatok</p>
-          <p>Nefajčiarske apartmány - všetky apartmány sú nefajčiarske, fajčenie je možné na terase/balkóne</p>
+          <p>Všetky apartmány sú nefajčiarske, fajčenie je možné na terase.</p>
         </v-col>
         <v-col cols="12" md="4">
           <p></p>
           <h3 class="mb-4">Platba</h3>
           <p></p>
-          <p>platba je možná hotovosti v EUR mene</p>
+          <p>Platba je možná hotovosti v EUR mene</p>
+          <p>Kreditnou kartou akceptujeme karty : Visa , Mastercard , Maestro</p>
           <h3 class="my-4">Povinné poplatky</h3>
           <p></p>
           <p>daň z ubytovania 1 €/os/noc (neplatia deti do 10 rokov)</p>
@@ -193,30 +194,59 @@
         <v-col cols="12" md="4">
           <p></p>
           <h3 class="mb-4">Stravovanie</h3>
-          <p>
-            Stravovanie umožňuje penzión: v jedálni, ktorá je zaroveň stravovacou miestnosťou na letnej terase, vybavenej
-            záhradným grilom v salóniku, vybaveným kuchynským kútom.
-          </p>
-          <p>
-            Pre hostí pripravujeme raňajky kontinentálneho typu, pre skupiny, resp. na objednávku obedy a večere (2 chody a
-            nápoj).
-          </p>
+          <p>Stravovanie umožňuje penzión v jedálni.</p>
+          <p>Rozšírené kontinentálne raňajky, večere pre skupiny.</p>
           <v-list density="compact" bgColor="transparent">
             <v-list-item color="primary" class="pl-0">
               <template v-slot:prepend>
                 <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
               </template>
               <v-list-item-title>Raňajky</v-list-item-title>
-              <template v-slot:append> 10&euro; </template>
+              <template v-slot:append> 10&euro; / 1 os </template>
             </v-list-item>
             <v-list-item color="primary" class="pl-0">
               <template v-slot:prepend>
                 <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
               </template>
               <v-list-item-title>Raňajky dieťa 4 - 9 rokov</v-list-item-title>
-              <template v-slot:append> 8&euro; </template>
+              <template v-slot:append> 6&euro; / os</template>
+            </v-list-item>
+            <v-list-item color="primary" class="pl-0">
+              <template v-slot:prepend>
+                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
+              </template>
+              <v-list-item-title>Raňajky dieťa 4 - 9 rokov</v-list-item-title>
+              <template v-slot:append> 6&euro; / os</template> </v-list-item
+            ><v-list-item color="primary" class="pl-0">
+              <template v-slot:prepend>
+                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
+              </template>
+              <v-list-item-title>Večera</v-list-item-title>
+              <template v-slot:append> 12&euro; / os</template>
+            </v-list-item>
+            <v-list-item color="primary" class="pl-0">
+              <template v-slot:prepend>
+                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
+              </template>
+              <v-list-item-title>Večera dieťa 4 - 9 rokov</v-list-item-title>
+              <template v-slot:append> 8&euro; / os</template>
             </v-list-item>
           </v-list>
+          <p>Príprava vlastnej stravy</p>
+          <v-list-item color="primary" class="pl-0">
+            <template v-slot:prepend>
+              <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
+            </template>
+            <v-list-item-title
+              >v kuchynskom kúte -vybaveným sklo keramickou doskou a potrebným kuchynským inventárom</v-list-item-title
+            >
+          </v-list-item>
+          <v-list-item color="primary" class="pl-0">
+            <template v-slot:prepend>
+              <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
+            </template>
+            <v-list-item-title>na letnej terase – záhradný gril</v-list-item-title>
+          </v-list-item>
         </v-col>
         <v-col cols="12" md="4">
           <h3 class="mb-4">Doplnkové vybvenie zariadenia</h3>
@@ -229,37 +259,25 @@
               <template v-slot:prepend>
                 <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
               </template>
-              <v-list-item-title>Parkovisko</v-list-item-title>
+              <v-list-item-title>Rozkladacia detská postieľka</v-list-item-title>
             </v-list-item>
             <v-list-item color="primary" class="pl-0">
               <template v-slot:prepend>
                 <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
               </template>
-              <v-list-item-title>Stolný tenis</v-list-item-title>
+              <v-list-item-title>Letná terasa so záhradným nábytkom</v-list-item-title>
             </v-list-item>
             <v-list-item color="primary" class="pl-0">
               <template v-slot:prepend>
                 <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
               </template>
-              <v-list-item-title>Šípky</v-list-item-title>
+              <v-list-item-title>Objekt monitorovaný kamerovým systémom</v-list-item-title>
             </v-list-item>
             <v-list-item color="primary" class="pl-0">
               <template v-slot:prepend>
                 <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
               </template>
-              <v-list-item-title>Požičovňa spoločenských hier</v-list-item-title>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Požičovňa detských hračiek</v-list-item-title>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Trezor</v-list-item-title>
+              <v-list-item-title>WIFI</v-list-item-title>
             </v-list-item>
             <v-list-item color="primary" class="pl-0">
               <template v-slot:prepend>
@@ -271,7 +289,19 @@
               <template v-slot:prepend>
                 <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
               </template>
-              <v-list-item-title>WIFI v celom objekte </v-list-item-title>
+              <v-list-item-title>Stolný tenis</v-list-item-title>
+            </v-list-item>
+            <v-list-item color="primary" class="pl-0">
+              <template v-slot:prepend>
+                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
+              </template>
+              <v-list-item-title>Parkovisko</v-list-item-title>
+            </v-list-item>
+            <v-list-item color="primary" class="pl-0">
+              <template v-slot:prepend>
+                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
+              </template>
+              <v-list-item-title>Detské hračky</v-list-item-title>
             </v-list-item>
             <v-list-item color="primary" class="pl-0">
               <template v-slot:prepend>
@@ -283,7 +313,7 @@
               <template v-slot:prepend>
                 <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
               </template>
-              <v-list-item-title>informačný materiál </v-list-item-title>
+              <v-list-item-title>Informačný materiál </v-list-item-title>
             </v-list-item>
           </v-list>
         </v-col>
@@ -301,8 +331,7 @@
               <template v-slot:prepend>
                 <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
               </template>
-              <v-list-item-title>Zviera po dohode </v-list-item-title>
-              <template v-slot:append> 10&euro; </template>
+              <v-list-item-title>Návšteva so psom – max. strednej výšky, jedno-rázový poplatok 15 EUR </v-list-item-title>
             </v-list-item>
           </v-list>
         </v-col>

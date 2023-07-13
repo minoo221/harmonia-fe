@@ -23,6 +23,7 @@ export interface Activity {
   title: string;
   locale?: string;
   okolies?: any;
+  desc?: string
 }
 
 export interface ContactInfo {

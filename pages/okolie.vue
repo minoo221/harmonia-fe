@@ -3,6 +3,7 @@
     <v-container>
       <div v-for="(item, index) in activities?.data" :key="item.id">
         <h2 class="text-left mb-6">{{ item.attributes.title }}</h2>
+        <p class="mb-6">{{ item.attributes.desc }}</p>
         <v-row class="mb-6">
           <v-col cols="12" md="3" v-for="activity in item.attributes.okolies?.data">
             <v-card :href="activity.attributes.url">
@@ -18,6 +19,19 @@
             </v-card>
           </v-col>
         </v-row>
+      </div>
+      <div>
+        <h2 class="text-left mb-6">Poloha</h2>
+        <p class="mb-4">
+          Penzion Harmonia, s 2 hviezdičkami, sa nachadza v srdci Liptova, v Liptovskom Mikuláši – časť Ondrašová iba 2 km od
+          Aquaparku Tatralandia. Ponúka ubytovanie v 9 štandardne vybavených izbach s gaučom, ktorý je využívaný na prístelky.
+          Kapacita penzionu je 23 pevnych ložok, 7 prísteliek
+        </p>
+        <p>
+          V izbe sa nachádza chladnička, WI-Fi pripojenie. Vybavenie kúpelne – sprchovací kút, a toaleta, kúpelk.nábytok . Pre
+          vlastnú prípravu stravu zo strany hosti, je k dispozícii vybavený kuchynský kút s dvojplatničkou a kuchynskym
+          inventárom.
+        </p>
       </div>
     </v-container>
   </section>

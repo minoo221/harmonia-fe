@@ -2,7 +2,7 @@
   "hello": "Ahoj, {name}!",
   "test": "test",
   "home": {
-    "homeInfo": "Útulný penzión na okraji mesta s parkoviskom pred objektom ako aj v uzavretom objekte na spoločnom pozemku s domácimi, súčasťou ktorého je letná terasa s grilom.",
+    "homeInfo": "Útulný rodinný penzión s uzavretým parkoviskom na periférii mesta Liptovského Mikuláša Vám ponúka dokonalý relax a pohodu.",
     "fromGallery": "Niečo z galérie",
     "title": "Penzión Harmónia"
   },
@@ -10,7 +10,7 @@
     "about": "Penzión Harmónia predstavuje útulný penzión situovaný na okraji Liptovského Mikuláša, vo vzdialenosti len 2 km od vyhľadávaného aquaparku Tatralandia. Práve vďaka svojej ideálnej polohe predstavuje penzión ideálne miesto pre trávenie letnej aj zimnej dovolenk"
   },
   "apartments": {
-    "title": "Apartmány",
+    "title": "Ubytovanie",
     "reservation": "Rezervácia"
   },
   "priceList": {

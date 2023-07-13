@@ -11,7 +11,7 @@
         </template> -->
         <v-slide-group-item v-for="(img, itemIndex) in item.attributes.gallery?.data">
           <div class="slide-item" @click="showGallery(index, itemIndex)">
-            <v-img :src="img.attributes.fromats.small.url" cover />
+            <v-img :src="img.attributes.formats.small.url" cover />
           </div>
         </v-slide-group-item>
       </v-slide-group>

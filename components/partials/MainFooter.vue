@@ -84,9 +84,9 @@ const { data: contact, refresh } = await useAsyncData("contact-information", () 
 
 const menu: Menu[] = reactive([
   { title: "Úvod", to: localePath(""), isReservation: false },
-  { title: "Apartmány", to: localePath("apartmany"), isReservation: false },
+  { title: "Ubytovanie", to: localePath("apartmany"), isReservation: false },
   { title: "Cenník", to: localePath("cennik"), isReservation: false },
-  { title: "Okolie", to: localePath("okolie"), isReservation: false },
+  { title: "Aktivity v okolí", to: localePath("okolie"), isReservation: false },
   { title: "Galéria", to: localePath("galeria"), isReservation: false },
   { title: "Kontakt", to: localePath("contact"), isReservation: false },
   { title: "Rezervácia", to: localePath("kontakt"), isReservation: true },
