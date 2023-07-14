@@ -224,5 +224,12 @@ onMounted(() => {
     word-wrap: break-word;
     padding-right: 35px;
   }
+  .v-card-actions {
+    .v-btn {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+    }
+  }
 }
 </style>
