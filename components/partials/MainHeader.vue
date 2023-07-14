@@ -36,8 +36,8 @@
       <div class="header-menu">
         <v-container>
           <v-row class="align-center" justify="space-between">
-            <v-col col="12" md="auto" class="py-0">
-              <NuxtLink to="/">
+            <v-col col="12" md="2" class="py-0">
+              <NuxtLink to="/" class="d-block">
                 <v-img contain src="/images/penzion_harmonia_logo.png" class="img-logo"></v-img>
               </NuxtLink>
             </v-col>
