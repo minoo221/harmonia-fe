@@ -3,7 +3,7 @@
     <v-container>
       <v-row class="mb-6">
         <v-col cols="12" md="4" v-for="(item, index) in apartments?.data">
-          <v-card rounded="xl" elevation="8">
+          <v-card rounded="xl" elevation="8" height="100%">
             <v-img
               :src="item.attributes.titleImg.data?.attributes.url"
               class="text-left align-end rounded-md"
@@ -172,7 +172,9 @@ const index: Ref<number> = ref(0);
 const images: Ref<any> = ref([]);
 
 const { find } = useStrapi();
-const { data: apartments, refresh } = await useAsyncData("apartments", () => find<Apartment>("apartments", { populate: "*" }));
+const { data: apartments, refresh } = await useAsyncData("apartments", () =>
+  find<Apartment>("apartments", { populate: "*", sort: "sort" })
+);
 
 const onShow = () => {
   isVisible.value = true;
@@ -214,5 +216,13 @@ onMounted(() => {
   position: absolute;
   right: 5px;
   bottom: 5px;
+}
+
+.v-card {
+  .v-card-title {
+    white-space: initial;
+    word-wrap: break-word;
+    padding-right: 35px;
+  }
 }
 </style>
