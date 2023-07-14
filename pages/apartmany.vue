@@ -36,10 +36,20 @@
                 <v-col cols="auto">
                   <v-list-item>
                     <template v-slot:prepend>
-                      <v-icon size="large" color="secondary" icon="mdi-account-group" class="mr-2"></v-icon>
+                      <v-icon size="large" color="secondary" icon="mdi-image-size-select-small" class="mr-2"></v-icon>
                     </template>
 
-                    <v-list-item-title class="text-left">{{ item.attributes.people }}</v-list-item-title>
+                    <v-list-item-title class="text-left">{{ item.attributes.size }} m<sup>2</sup></v-list-item-title>
+                  </v-list-item>
+                </v-col>
+
+                <v-col cols="auto" v-if="item.attributes.couch">
+                  <v-list-item>
+                    <template v-slot:prepend>
+                      <v-icon size="large" color="secondary" icon="mdi-sofa" class="mr-2"></v-icon>
+                    </template>
+
+                    <v-list-item-title class="text-left">rozťahovací gauč</v-list-item-title>
                   </v-list-item>
                 </v-col>
                 <v-col cols="auto">
@@ -49,6 +59,15 @@
                     </template>
 
                     <v-list-item-title class="text-left">{{ item.attributes.bathroom }}</v-list-item-title>
+                  </v-list-item>
+                </v-col>
+                <v-col cols="auto">
+                  <v-list-item>
+                    <template v-slot:prepend>
+                      <v-icon size="large" color="secondary" icon="mdi-account-group" class="mr-2"></v-icon>
+                    </template>
+
+                    <v-list-item-title class="text-left">{{ item.attributes.people }}</v-list-item-title>
                   </v-list-item>
                 </v-col>
 
@@ -82,17 +101,10 @@
           <v-list bg-color="transparent">
             <v-list-item class="pl-0">
               <template v-slot:prepend>
-                <v-icon size="large" color="secondary" icon="mdi-pot-mix" class="mr-2"></v-icon>
-              </template>
-
-              <v-list-item-title class="text-left">Kuchyňa</v-list-item-title>
-            </v-list-item>
-            <v-list-item class="pl-0">
-              <template v-slot:prepend>
                 <v-icon size="large" color="secondary" icon="mdi-bed-king-outline" class="mr-2"></v-icon>
               </template>
 
-              <v-list-item-title class="text-left">Manželská posteľ</v-list-item-title>
+              <v-list-item-title class="text-left">Manželské postele</v-list-item-title>
             </v-list-item>
             <v-list-item class="pl-0">
               <template v-slot:prepend>
@@ -113,7 +125,7 @@
                 <v-icon size="large" color="secondary" icon="mdi-television" class="mr-2"></v-icon>
               </template>
 
-              <v-list-item-title class="text-left">LCD TV</v-list-item-title>
+              <v-list-item-title class="text-left">TV</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-col>
@@ -121,24 +133,24 @@
           <v-list bg-color="transparent">
             <v-list-item class="pl-0">
               <template v-slot:prepend>
-                <v-icon size="large" color="secondary" icon="mdi-kettle" class="mr-2"></v-icon>
-              </template>
-
-              <v-list-item-title class="text-left">Rychlovárna kanvica</v-list-item-title>
-            </v-list-item>
-            <v-list-item class="pl-0">
-              <template v-slot:prepend>
-                <v-icon size="large" color="secondary" icon="mdi-cup" class="mr-2"></v-icon>
-              </template>
-
-              <v-list-item-title class="text-left">Poháre a šálky</v-list-item-title>
-            </v-list-item>
-            <v-list-item class="pl-0">
-              <template v-slot:prepend>
                 <v-icon size="large" color="secondary" icon="mdi-fridge" class="mr-2"></v-icon>
               </template>
 
               <v-list-item-title class="text-left">Chladnička</v-list-item-title>
+            </v-list-item>
+            <v-list-item class="pl-0">
+              <template v-slot:prepend>
+                <v-icon size="large" color="secondary" icon="mdi-receipt-outline" class="mr-2"></v-icon>
+              </template>
+
+              <v-list-item-title class="text-left">Osušky a uteráky</v-list-item-title>
+            </v-list-item>
+            <v-list-item class="pl-0">
+              <template v-slot:prepend>
+                <v-icon size="large" color="secondary" icon="mdi-hair-dryer" class="mr-2"></v-icon>
+              </template>
+
+              <v-list-item-title class="text-left">Bezplatné zapožičanie sušica na vlasy na recepcií</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-col>
