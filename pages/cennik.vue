@@ -407,4 +407,11 @@ onMounted(() => {
   right: 5px;
   bottom: 5px;
 }
+.price-info {
+  .v-list-item-title {
+    white-space: wrap;
+    white-space: initial;
+    text-overflow: none;
+  }
+}
 </style>

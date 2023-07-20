@@ -115,7 +115,7 @@ const menu: Menu[] = reactive([
   { title: "Aktivity v okolí", to: localePath("okolie"), isReservation: false },
   { title: "Galéria", to: localePath("galeria"), isReservation: false },
   { title: "Kontakt", to: localePath("kontakt"), isReservation: false },
-  { title: "Rezervácia", to: localePath("kontakt"), isReservation: true },
+  { title: "Rezervácia", to: localePath("rezervacia"), isReservation: true },
 ]);
 
 const slides: Slider[] = reactive([
