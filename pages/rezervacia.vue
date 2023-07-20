@@ -5,7 +5,7 @@
         <v-col cols="12">
           <iframe
             frameborder="0"
-            scrolling="no"
+            scrolling="yes"
             width="100%"
             height="650px"
             style="background: #edf2f4"
