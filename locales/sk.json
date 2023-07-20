@@ -41,9 +41,9 @@
         "error": "Ospravedlňujeme sa, niekde sa stala chyba. Skúste to znova.",
         "success": "Kontaktný formulár bol úspešne odoslaný"
       }
-    },
-    "reservation": {
-      "title": "Reservation"
     }
+  },
+  "reservation": {
+    "title": "Rezervácia"
   }
 }
