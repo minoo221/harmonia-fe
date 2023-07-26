@@ -17,7 +17,7 @@
           <v-col cols="12" md="4" class="pt-5">
             <p>{{ t("footer.about") }}</p>
           </v-col>
-          <v-col cols="12" md="2" offset-md="2">
+          <v-col cols="12" sm="6" md="4" lg="2" offset-lg="2">
             <h2 class="mx-4">Odkazy</h2>
             <v-list nav bg-color="transparent" density="compact" color="white">
               <v-list-item v-for="(item, i) in menu" :key="i" :to="item.to" nuxt nav base-color="white" link color="#fff" exact>
@@ -25,7 +25,7 @@
               </v-list-item>
             </v-list>
           </v-col>
-          <v-col cols="12" md="4" offset-md="0">
+          <v-col cols="12" sm="6" md="4" offset-md="0">
             <h2 class="mx-4">Kontakt</h2>
             <v-list bg-color="transparent" color="white" class="mb-6">
               <v-list-item base-color="white" color="#fff" density="comfortable">
@@ -83,7 +83,7 @@ const { data: contact, refresh } = await useAsyncData("contact-information", () 
 );
 
 const menu: Menu[] = reactive([
-  { title: "Úvod", to: localePath(""), isReservation: false },
+  { title: "Úvod", to: localePath("/"), isReservation: false },
   { title: "Ubytovanie", to: localePath("apartmany"), isReservation: false },
   { title: "Cenník", to: localePath("cennik"), isReservation: false },
   { title: "Aktivity v okolí", to: localePath("okolie"), isReservation: false },

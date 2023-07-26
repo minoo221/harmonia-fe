@@ -2,141 +2,23 @@
   <section class="main-info text-center">
     <v-container>
       <v-row class="mb-6">
-        <v-col cols="12" md="4">
+        <v-col cols="12" sm="6" md="4" v-for="item in prices?.data" :key="item.id">
           <v-card>
-            <v-card-title class="primary white--text py-4"> Mimosezóna </v-card-title>
-            <v-card-subtitle>3. 1. - 25. 1. a 1. 3. - 15. 6. a 1.9 - 22. 12.</v-card-subtitle>
+            <v-card-title class="primary white--text py-4"> {{ item.attributes.title }} </v-card-title>
+            <v-card-subtitle>{{ item.attributes.dates }}</v-card-subtitle>
             <v-card-text>
               <v-table>
                 <thead>
                   <tr>
                     <th class="text-left">Izba</th>
-                    <th class="text-left">Apartmán/noc</th>
+                    <th class="text-right">Apartmán/noc</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Izba 1/1</td>
-                    <td>30 €</td>
-                  </tr>
-                  <tr>
-                    <td>Izba 1/2</td>
-                    <td>40 €</td>
-                  </tr>
-                  <tr>
-                    <td>Izba 1/2 nadštandart</td>
-                    <td>55 €</td>
-                  </tr>
-                  <tr>
-                    <td>Izba 1/3</td>
-                    <td>65 €</td>
-                  </tr>
-                  <tr>
-                    <td>Izba 1/4</td>
-                    <td>83 €</td>
-                  </tr>
-                  <tr>
-                    <td>Štúdio 2+2</td>
-                    <td>85 €</td>
-                  </tr>
-                  <tr>
-                    <td>Prístelok</td>
-                    <td>12 €</td>
-                  </tr>
-                </tbody>
-              </v-table>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-card>
-            <v-card-title class="primary white--text py-4"> Sezóna </v-card-title>
-            <v-card-subtitle>23. 12. - 2. 1. a 26. 1. - 28. 2. a 16.6. - 31. 08.</v-card-subtitle>
-            <v-card-text>
-              <v-table>
-                <thead>
-                  <tr>
-                    <th class="text-left">Izba</th>
-                    <th class="text-left">Apartmán/noc</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Izba 1/1</td>
-                    <td>40 €</td>
-                  </tr>
-                  <tr>
-                    <td>Izba 1/2</td>
-                    <td>50 €</td>
-                  </tr>
-                  <tr>
-                    <td>Izba 1/2 nadštandart</td>
-                    <td>60 €</td>
-                  </tr>
-                  <tr>
-                    <td>Izba 1/3</td>
-                    <td>70 €</td>
-                  </tr>
-                  <tr>
-                    <td>Izba 1/4</td>
-                    <td>90 €</td>
-                  </tr>
-                  <tr>
-                    <td>Štúdio 2+2</td>
-                    <td>95 €</td>
-                  </tr>
-                  <tr>
-                    <td>Prístelok</td>
-                    <td>15 €</td>
-                  </tr>
-                </tbody>
-              </v-table>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-card>
-            <v-card-title class="primary white--text py-4"> Špeciálna ponuka </v-card-title>
-            <v-card-subtitle>1. 6. - 15. 6.</v-card-subtitle>
-            <v-card-text>
-              <v-table>
-                <thead>
-                  <tr>
-                    <th class="text-left">Izba</th>
-                    <th class="text-left">Apartmán/noc</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Izba 1/1</td>
-                    <td>30 €</td>
-                  </tr>
-                  <tr>
-                    <td>Izba 1/2</td>
-                    <td>40 €</td>
-                  </tr>
-                  <tr>
-                    <td>Izba 1/2 nadštandart</td>
-                    <td>50 €</td>
-                  </tr>
-                  <tr>
-                    <td>Izba 1/3</td>
-                    <td>57 €</td>
-                  </tr>
-                  <tr>
-                    <td>Izba 1/4</td>
-                    <td>75 €</td>
-                  </tr>
-                  <tr>
-                    <td>Štúdio 2+2</td>
-                    <td>78 €</td>
-                  </tr>
-                  <tr>
-                    <td>Prístelok</td>
-                    <td>15 €</td>
+                  <tr v-for="priceItem in item.attributes?.price" :key="priceItem.key">
+                    <td>{{ priceItem.room }}</td>
+                    <td class="text-right">{{ priceItem.price }} €</td>
                   </tr>
                 </tbody>
               </v-table>
@@ -149,14 +31,14 @@
   <section class="price-info">
     <v-container>
       <v-row>
-        <v-col cols="12" md="4">
+        <v-col cols="12" sm="6" md="4">
           <h3 class="mb-4">Ubytovacie podmienky</h3>
           <p>Check in (nástup na pobyt) - 14:<sup>00</sup> - 22:<sup>00</sup> - neskorší čas po nahlásení za extra príplatok</p>
           <p>Check out (odhlásenie z pobytu) - do 10:<sup>00</sup> hod. - neskorší odchod len po dohode za extra príplatok</p>
           <p>Domáce zvieratá - po dohode za príplatok</p>
           <p>Všetky apartmány sú nefajčiarske, fajčenie je možné na terase.</p>
         </v-col>
-        <v-col cols="12" md="4">
+        <v-col cols="12" sm="6" md="4">
           <p></p>
           <h3 class="mb-4">Platba</h3>
           <p></p>
@@ -248,7 +130,7 @@
             <v-list-item-title>na letnej terase – záhradný gril</v-list-item-title>
           </v-list-item>
         </v-col>
-        <v-col cols="12" md="4">
+        <v-col cols="12" sm="6" md="4">
           <h3 class="mb-4">Doplnkové vybvenie zariadenia</h3>
           <p>
             Spoločenská miestnosť s kapacitou cca 30 miest, ktorá je zároveň stravovacou miestnosťou s barom, štýlovým krbom,
@@ -317,7 +199,7 @@
             </v-list-item>
           </v-list>
         </v-col>
-        <v-col cols="12" md="4">
+        <v-col cols="12" sm="6" md="4">
           <h3 class="mb-4">Individuálne služby</h3>
           <v-list density="compact" bgColor="transparent">
             <v-list-item color="primary" class="pl-0">
@@ -342,7 +224,7 @@
 
 <script setup lang="ts">
 const { locale, t } = useI18n();
-import type { Slider } from "~/types";
+import type { Slider, Price } from "~/types";
 const emit = defineEmits(["title"]);
 import { useIndexStore } from "@/stores/";
 const store = useIndexStore();
@@ -351,51 +233,13 @@ const isVisible: Ref<boolean> = ref(false);
 const index: Ref<number> = ref(0);
 const images: Ref<any> = ref([]);
 
-const apartments: any[] = reactive([
-  {
-    title: "Apartmán č. 1",
-    src: "/images/jasna_leto_3.jpg",
-    gallery: [{ src: "/images/jasna_leto_3.jpg" }, { src: "/images/jasna_leto_3.jpg" }, { src: "/images/jasna_leto_3.jpg" }],
-    rooms: "2 izby",
-    persons: "4+1 osoby",
-    bathrooms: "1 kupeľňa",
-    kitchen: "Obývačka s kuchynským kútom",
-  },
-  {
-    title: "Apartmán č. 1",
-    src: "/images/jasna_leto_3.jpg",
-    gallery: [{ src: "/images/jasna_leto_3.jpg" }, { src: "/images/jasna_leto_3.jpg" }, { src: "/images/jasna_leto_3.jpg" }],
-    rooms: "2 izby",
-    persons: "4+1 osoby",
-    bathrooms: "1 kupeľňa",
-    kitchen: "Obývačka s kuchynským kútom",
-  },
-  {
-    title: "Apartmán č. 1",
-    src: "/images/jasna_leto_3.jpg",
-    gallery: [{ src: "/images/jasna_leto_3.jpg" }, { src: "/images/jasna_leto_3.jpg" }, { src: "/images/jasna_leto_3.jpg" }],
-    rooms: "2 izby",
-    persons: "4+1 osoby",
-    bathrooms: "1 kupeľňa",
-    kitchen: "Obývačka s kuchynským kútom",
-  },
-]);
-
-const onShow = () => {
-  isVisible.value = true;
-};
-
-const onHide = () => {
-  isVisible.value = false;
-};
-
-function showGallery(index: number) {
-  images.value = apartments[index].gallery;
-  console.log(images.value);
-
-  onShow();
-  /* gallery.silentbox.openOverlay(item, index); */
-}
+const { find } = useStrapi();
+const { data: prices, refresh } = await useAsyncData("prices", () =>
+  find<Price>("prices", {
+    populate: "*",
+    sort: "id",
+  })
+);
 
 onMounted(() => {
   store.setTitle(t("priceList.title"));
@@ -412,6 +256,14 @@ onMounted(() => {
     white-space: wrap;
     white-space: initial;
     text-overflow: none;
+  }
+}
+
+.main-info {
+  .v-card {
+    .v-card-subtitle {
+      white-space: pre-wrap;
+    }
   }
 }
 </style>

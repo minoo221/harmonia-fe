@@ -152,6 +152,12 @@ onMounted(() => {
         padding: 0 20px;
         height: 250px;
         overflow: hidden;
+        @media (max-width: 600px) {
+          height: 150px;
+          img {
+            height: 100%;
+          }
+        }
         .v-img {
           width: 450px;
         }

@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__top" v-scroll="onScroll" ref="header" :class="{ isScrolled: isScrolled, 'elevation-4': isScrolled }">
-      <div class="header-info">
+      <div class="header-info d-none d-md-block">
         <v-container class="py-0">
           <v-row height="100%" align="center" justify="end" no-gutters>
             <v-col col="12" md="auto" class="p-0">
@@ -41,7 +41,7 @@
                 <v-img contain src="/images/penzion_harmonia_logo.png" class="img-logo"></v-img>
               </NuxtLink>
             </v-col>
-            <v-col cols="12" md="auto">
+            <v-col cols="12" md="auto" class="d-none d-md-block">
               <div class="d-flex">
                 <div v-for="(item, index) in menu" :key="index">
                   <v-btn
@@ -56,11 +56,14 @@
                   >
                     {{ item.title }}
                   </v-btn>
-                  <v-btn v-else exact class="mx-2" color="white" link :to="item.to" variant="plain" nuxt>
+                  <v-btn v-else exact class="mx-0 px-2 mx-lg-2 px-lg-4" color="white" link :to="item.to" variant="plain" nuxt>
                     {{ item.title }}
                   </v-btn>
                 </div>
               </div>
+            </v-col>
+            <v-col cols="auto" class="d-block d-md-none">
+              <v-btn icon="mdi-menu" density="default" color="primary" @click="drawer = true"></v-btn>
             </v-col>
           </v-row>
         </v-container>
@@ -80,6 +83,16 @@
         </v-carousel-item>
       </v-carousel>
     </div>
+    <v-navigation-drawer v-model="drawer" temporary location="right" color="secondary">
+      <div class="d-flex justify-end">
+        <v-btn class="ml-auto" variant="text" size="x-large" icon="mdi-close" color="primary" @click="drawer = false"></v-btn>
+      </div>
+      <v-list nav bg-color="transparent" density="compact" color="white">
+        <v-list-item v-for="(item, i) in menu" :key="i" :to="item.to" nuxt nav base-color="white" link color="#fff" exact>
+          <v-list-item-title v-text="item.title"></v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
   </header>
 </template>
 
@@ -102,6 +115,8 @@ const overlay: Ref<boolean> = ref(true);
 const isScrolled: Ref<boolean> = ref(false);
 
 const header = ref<any>(null);
+
+const drawer: Ref<boolean> = ref(false);
 
 const { find } = useStrapi();
 const { data: contact, refresh } = await useAsyncData("contact-information", () =>
@@ -150,6 +165,9 @@ onMounted(() => {
     &.isScrolled {
       transform: translateY(-50px);
       background: $secondary-100;
+      @media (max-width: 960px) {
+        transform: translateY(0px);
+      }
     }
     .header-info {
       /* background: $secondary-80; */
@@ -157,6 +175,11 @@ onMounted(() => {
     }
     .header-menu {
       /* background: $white; */
+      @media (max-width: 1250px) {
+        .v-btn {
+          font-size: 12px;
+        }
+      }
     }
     .v-container {
       height: 100%;

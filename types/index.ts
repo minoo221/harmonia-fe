@@ -49,3 +49,9 @@ export interface Review {
   reviewText?: string
   rating?: number
 }
+
+export interface Price {
+  title: string;
+  dates?: string
+  prices?: any;
+}

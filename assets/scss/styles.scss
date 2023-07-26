@@ -58,4 +58,14 @@ body {
                 color: $white;
             }
         }
+        .v-btn {
+            &--active {
+                &.v-btn--variant-plain {
+                    .v-btn__content {
+                        color: $primary-80;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
 }

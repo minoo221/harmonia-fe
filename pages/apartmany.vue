@@ -2,7 +2,7 @@
   <section class="main-info text-center">
     <v-container>
       <v-row class="mb-6">
-        <v-col cols="12" md="4" v-for="(item, index) in apartments?.data">
+        <v-col cols="12" sm="6" lg="4" v-for="(item, index) in apartments?.data">
           <v-card rounded="xl" elevation="8" height="100%">
             <v-img
               :src="item.attributes.titleImg.data?.attributes.url"
@@ -20,6 +20,11 @@
                 color="white"
                 @click="showGallery(index)"
               ></v-btn>
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular indeterminate color="grey-lighten-5"></v-progress-circular>
+                </v-row>
+              </template>
             </v-img>
 
             <v-card-text>
@@ -223,6 +228,11 @@ onMounted(() => {
     white-space: initial;
     word-wrap: break-word;
     padding-right: 35px;
+    @media (max-width: 1200px) {
+      font-size: 18px;
+      line-height: 21px;
+      padding-right: 45px;
+    }
   }
   .v-card-actions {
     .v-btn {

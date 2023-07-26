@@ -5,7 +5,7 @@
         <h2 class="text-left mb-6">{{ item.attributes.title }}</h2>
         <p class="mb-6">{{ item.attributes.desc }}</p>
         <v-row class="mb-6">
-          <v-col cols="12" md="3" v-for="activity in item.attributes.okolies?.data">
+          <v-col cols="12" sm="4" md="4" lg="3" v-for="activity in item.attributes.okolies?.data">
             <v-card :href="activity.attributes.url">
               <v-img
                 :src="activity.attributes.titleImg?.data.attributes.url"
@@ -91,6 +91,10 @@ onMounted(() => {
 .activities {
   h2 {
     font-size: 42px;
+  }
+  .v-card-title {
+    white-space: initial;
+    line-height: 21px;
   }
 }
 </style>

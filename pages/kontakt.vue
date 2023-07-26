@@ -59,8 +59,8 @@
                 ></v-checkbox>
               </v-col>
               <v-spacer></v-spacer>
-              <v-col cols="12" md="3" class="ml-auto">
-                <v-btn type="submit" append-icon="mdi-send" block class="mt-2" color="primary">{{
+              <v-col cols="12" md="3" class="ml-auto d-flex">
+                <v-btn type="submit" append-icon="mdi-send" class="mt-2 ml-auto" color="primary">{{
                   t("contact.form.submit")
                 }}</v-btn>
               </v-col>

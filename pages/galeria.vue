@@ -112,6 +112,9 @@ onMounted(() => {
         overflow: hidden;
         .v-img {
           width: 450px;
+          @media (max-width: 680px) {
+            width: 250px;
+          }
         }
       }
       .v-icon {

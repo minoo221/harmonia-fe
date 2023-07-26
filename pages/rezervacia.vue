@@ -20,7 +20,6 @@
 
 <script setup lang="ts">
 const { locale, t } = useI18n();
-import type { ContactInfo } from "~/types";
 const emit = defineEmits(["title"]);
 import { useIndexStore } from "@/stores/";
 const store = useIndexStore();
