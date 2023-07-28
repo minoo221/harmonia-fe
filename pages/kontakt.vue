@@ -146,12 +146,12 @@
                 </v-list-item>
               </v-list>
 
-              <h3 class="mx-4">IČ DPH:</h3>
+              <!-- <h3 class="mx-4">IČ DPH:</h3>
               <v-list bg-color="transparent" color="white" class="mb-6">
                 <v-list-item density="comfortable">
                   <v-list-item-title>{{ contact?.data.attributes.icDph }}</v-list-item-title>
                 </v-list-item>
-              </v-list>
+              </v-list> -->
             </v-col>
           </v-row>
         </v-col>
