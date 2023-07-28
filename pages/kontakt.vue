@@ -60,9 +60,15 @@
               </v-col>
               <v-spacer></v-spacer>
               <v-col cols="12" md="3" class="ml-auto d-flex">
-                <v-btn type="submit" append-icon="mdi-send" class="mt-2 ml-auto" color="primary">{{
-                  t("contact.form.submit")
-                }}</v-btn>
+                <v-btn
+                  type="submit"
+                  append-icon="mdi-send"
+                  class="mt-2 ml-auto"
+                  :loading="loadingSend"
+                  :disabled="loadingSend"
+                  color="primary"
+                  >{{ t("contact.form.submit") }}</v-btn
+                >
               </v-col>
             </v-row>
           </v-form>
@@ -164,6 +170,7 @@ const store = useIndexStore();
 
 const formData: any = reactive({});
 const form: Ref<any> = ref(null);
+const loadingSend: Ref<boolean> = ref(false);
 
 const { create, find } = useStrapi();
 
@@ -177,6 +184,7 @@ const sendForm = async () => {
   console.log(form.value);
 
   if (valid) {
+    loadingSend.value = true;
     try {
       await create<any>("send-contact", {
         name: formData.name,
@@ -190,6 +198,8 @@ const sendForm = async () => {
     } catch (e) {
       console.log(e);
       store.showError(t("contact.form.responses.error"));
+    } finally {
+      loadingSend.value = false;
     }
   }
 };
