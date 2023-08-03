@@ -131,7 +131,7 @@
           </v-list-item>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-          <h3 class="mb-4">Doplnkové vybvenie zariadenia</h3>
+          <h3 class="mb-4">Doplnkové vybavenie zariadenia</h3>
           <p>
             Spoločenská miestnosť s kapacitou cca 30 miest, ktorá je zároveň stravovacou miestnosťou s barom, štýlovým krbom,
             salónik s kapacitou 6 miest , vybavený kuchynským kútom letná terasa so záhradným grilom parkovisko s kapacitou 10 áut
