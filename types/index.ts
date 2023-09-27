@@ -55,3 +55,9 @@ export interface Price {
   dates?: string
   prices?: any;
 }
+
+export interface Privacy {
+  title: string;
+  body?: string
+  rank?: any;
+}

@@ -1,5 +1,6 @@
 <template>
   <section class="main-info text-center">
+    <h1 class="mb-4 title-bordered">{{ t("home.welcomeTitle") }}</h1>
     <h3>{{ t("home.homeInfo") }}</h3>
   </section>
   <section class="gallery text-center">
@@ -133,7 +134,7 @@ onMounted(() => {
 </script>
 <style scoped lang="scss">
 .main-info {
-  max-width: 680px;
+  max-width: 740px;
   margin: 0 auto;
   margin-bottom: 80px;
 }

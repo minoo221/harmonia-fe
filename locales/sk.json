@@ -2,7 +2,8 @@
   "hello": "Ahoj, {name}!",
   "test": "test",
   "home": {
-    "homeInfo": "Útulný rodinný penzión s uzavretým parkoviskom na periférii mesta Liptovského Mikuláša Vám ponúka dokonalý relax a pohodu.",
+    "welcomeTitle": "Vitajte v Penzióne Harmónia,",
+    "homeInfo": "miesto, kde sa stretáva pokoj a pohoda s Vašou túžbou po dobrodružstve. Nechajte sa uniesť atmosférou Penziónu Harmónia a doprajte si čas pre seba a svojich blízkych. Sme tu, aby sme Vám poskytli nezabudnuteľný pobyt a zážitky, ktoré budete zdieľať s ostatnými. Príďte k nám a zažite harmóniu odpočinku! Zarezervujte si svoju izbu ešte dnes a dajte nám príležitosť Vás ohromiť. Vaša spokojnosť je našou prioritou. Tešíme sa na Vás.",
     "fromGallery": "Niečo z galérie",
     "title": "Penzión Harmónia"
   },

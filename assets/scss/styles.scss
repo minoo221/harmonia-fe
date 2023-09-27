@@ -68,4 +68,19 @@ body {
                 }
             }
         }
+
+        .title-bordered {
+            position: relative;
+            padding-bottom: 10px;
+            &:after {
+                content: "";
+                width: 120px;
+                height: 4px;
+                border-bottom: 4px solid $primary-80;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
 }

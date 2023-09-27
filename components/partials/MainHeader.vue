@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div class="header__top" v-scroll="onScroll" ref="header" :class="{ isScrolled: isScrolled, 'elevation-4': isScrolled }">
+    <div class="header__top" :class="{ isScrolled: isScrolled, 'elevation-4': isScrolled }">
       <div class="header-info d-none d-md-block">
         <v-container class="py-0">
           <v-row height="100%" align="center" justify="end" no-gutters>
@@ -35,34 +35,37 @@
       </div>
       <div class="header-menu">
         <v-container>
+          <NuxtLink to="/" class="d-block logo-cover">
+            <v-img contain src="/images/penzion_harmonia_logo.png" class="img-logo" width="290px"></v-img>
+          </NuxtLink>
           <v-row class="align-center" justify="space-between">
-            <v-col col="12" md="2" class="py-0">
+            <!-- <v-col col="12" md="2" class="py-0">
               <NuxtLink to="/" class="d-block">
                 <v-img contain src="/images/penzion_harmonia_logo.png" class="img-logo"></v-img>
               </NuxtLink>
-            </v-col>
+            </v-col> -->
+            <v-spacer></v-spacer>
             <v-col cols="12" md="auto" class="d-none d-md-block">
               <div class="d-flex">
-                <div v-for="(item, index) in menu" :key="index">
+                <div>
                   <v-btn
-                    v-if="item.isReservation"
                     exact
                     class="mx-2"
                     color="primary"
                     link
-                    :to="item.to"
+                    :to="localePath('rezervacia')"
                     nuxt
                     prepend-icon="mdi-calendar-month-outline"
                   >
-                    {{ item.title }}
+                    Rezervácia
                   </v-btn>
-                  <v-btn v-else exact class="mx-0 px-2 mx-lg-2 px-lg-4" color="white" link :to="item.to" variant="plain" nuxt>
+                  <!-- <v-btn v-else exact class="mx-0 px-2 mx-lg-2 px-lg-4" color="white" link :to="item.to" variant="plain" nuxt>
                     {{ item.title }}
-                  </v-btn>
+                  </v-btn> -->
                 </div>
               </div>
             </v-col>
-            <v-col cols="auto" class="d-block d-md-none">
+            <v-col cols="auto">
               <v-btn icon="mdi-menu" density="default" color="primary" @click="drawer = true"></v-btn>
             </v-col>
           </v-row>
@@ -70,9 +73,9 @@
       </div>
     </div>
     <div class="header__bottom">
-      <div class="title-cover align-center justify-center">
+      <!-- <div class="title-cover align-center justify-center">
         <h1>{{ title }}</h1>
-      </div>
+      </div> -->
       <v-carousel height="520" hide-delimiters :show-arrows="false">
         <v-carousel-item v-for="(slide, i) in slides" :key="i">
           <v-sheet color="rgba(0,0,0, 1)" width="100%" height="100%" position="absolute">
@@ -112,9 +115,9 @@ const localePath = useLocalePath();
 
 const overlay: Ref<boolean> = ref(true);
 
-const isScrolled: Ref<boolean> = ref(false);
+/* const isScrolled: Ref<boolean> = ref(false); */
 
-const header = ref<any>(null);
+/* const header = ref<any>(null); */
 
 const drawer: Ref<boolean> = ref(false);
 
@@ -130,7 +133,7 @@ const menu: Menu[] = reactive([
   { title: "Aktivity v okolí", to: localePath("okolie"), isReservation: false },
   { title: "Galéria", to: localePath("galeria"), isReservation: false },
   { title: "Kontakt", to: localePath("kontakt"), isReservation: false },
-  { title: "Rezervácia", to: localePath("rezervacia"), isReservation: true },
+  /* { title: "Rezervácia", to: localePath("rezervacia"), isReservation: true }, */
 ]);
 
 const slides: Slider[] = reactive([
@@ -138,14 +141,14 @@ const slides: Slider[] = reactive([
   { title: "Jasná 2", img: "/images/jasna_leto_3.jpg" },
 ]);
 
-function onScroll(e: any) {
-  /* console.log("scroll", header.value.children[0].clientHeight, window.scrollY); */
+/* function onScroll(e: any) {
+  console.log("scroll", header.value.children[0].clientHeight, window.scrollY);
   if (window.scrollY >= header.value.children[0].clientHeight) {
     isScrolled.value = true;
   } else {
     isScrolled.value = false;
   }
-}
+} */
 
 onMounted(() => {
   console.log(store.title);
@@ -153,13 +156,12 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-.img-logo {
-  max-width: 140px;
-}
 .header {
+  position: relative;
   &__top {
-    position: fixed;
+    position: absolute;
     width: 100%;
+    height: 100%;
     z-index: 1000;
     transition: all 0.3s ease;
     &.isScrolled {
@@ -172,6 +174,12 @@ onMounted(() => {
     .header-info {
       /* background: $secondary-80; */
       height: 50px;
+    }
+    .logo-cover {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     .header-menu {
       /* background: $white; */
