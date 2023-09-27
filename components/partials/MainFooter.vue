@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="footer">
     <!-- <div class="footer__top">
       <GoogleMap api-key="AIzaSyDzsvWr8eGPYF4RQqavfNmuMJuu0HpSbqw" style="width: 100%; height: 300px" :center="center" :zoom="15">
         <Marker :options="{ position: center }">
@@ -66,57 +66,80 @@
         </v-row>
       </v-container>
     </div> -->
-    <v-container>
-      <v-row>
-        <v-col cols="12" md="4" class="pt-5 d-flex align-center">
-          <NuxtLink to="/" class="d-block logo-cover">
-            <v-img src="/images/penzion_harmonia_logo.png" class="img-logo" width="290px"></v-img>
-          </NuxtLink>
-        </v-col>
-        <v-col cols="12" sm="6" md="3" offset-lg="1">
-          <h2 class="mx-4">Adresa</h2>
-          <v-list bg-color="transparent" color="white" class="mb-6">
-            <v-list-item base-color="white" color="#fff" density="comfortable">
-              <template v-slot:prepend>
-                <v-icon color="#fff" class="mr-2">mdi-map-marker</v-icon>
-              </template>
-              <v-list-item-title
-                >{{ contact?.data.attributes.addressHome.address }}, <br />
-                {{ contact?.data.attributes.addressHome.zip }}
-                {{ contact?.data.attributes.addressHome.city }} <br />
-                {{ contact?.data.attributes.addressHome.country }}</v-list-item-title
+    <div class="footer_top">
+      <v-container>
+        <v-row>
+          <v-col cols="12" md="4" class="pt-5 d-flex align-center">
+            <NuxtLink to="/" class="d-block logo-cover">
+              <v-img src="/images/penzion_harmonia_logo.png" class="img-logo" width="290px"></v-img>
+            </NuxtLink>
+          </v-col>
+          <v-col cols="12" sm="6" md="3" offset-lg="1">
+            <h2 class="mx-4">Adresa</h2>
+            <v-list bg-color="transparent" color="white" class="mb-6">
+              <v-list-item base-color="white" color="#fff" density="comfortable">
+                <template v-slot:prepend>
+                  <v-icon color="#fff" class="mr-2">mdi-map-marker</v-icon>
+                </template>
+                <v-list-item-title
+                  >{{ contact?.data.attributes.addressHome.address }}, <br />
+                  {{ contact?.data.attributes.addressHome.zip }}
+                  {{ contact?.data.attributes.addressHome.city }} <br />
+                  {{ contact?.data.attributes.addressHome.country }}</v-list-item-title
+                >
+              </v-list-item>
+            </v-list>
+            <v-btn
+              variant="plain"
+              color="white"
+              class="text-subtitle-2 text-decoration-underline"
+              link
+              href="https://maps.app.goo.gl/geJQ3Yqf1Ue7absZ6"
+              target="_blank"
+              >Zobraziť na mape</v-btn
+            >
+          </v-col>
+          <v-col cols="12" sm="6" md="4">
+            <h2 class="mx-4">Kontaktné informácie</h2>
+            <v-list bg-color="transparent" color="white" class="mb-6">
+              <v-list-item
+                base-color="white"
+                color="#fff"
+                density="comfortable"
+                v-for="tel in contact?.data.attributes.telephones"
               >
-            </v-list-item>
-          </v-list>
+                <template v-slot:prepend>
+                  <v-icon color="#fff" class="mr-2">mdi-phone</v-icon>
+                </template>
+                <v-list-item-title>{{ tel.item }}</v-list-item-title>
+              </v-list-item>
+              <v-list-item base-color="white" color="#fff" density="comfortable">
+                <template v-slot:prepend>
+                  <v-icon color="#fff" class="mr-2">mdi-email</v-icon>
+                </template>
+                <v-list-item-title>{{ contact?.data.attributes.email }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
+    <div class="footer__bottom">
+      <v-container class="text-center">
+        <p>© 2023 Penzión Harmónia.</p>
+        <p class="mb-0">
           <v-btn
             variant="plain"
             color="white"
-            class="text-subtitle-2 text-decoration-underline"
+            class="text-subtitle-1 text-decoration-underline"
             link
-            href="https://maps.app.goo.gl/geJQ3Yqf1Ue7absZ6"
-            target="_blank"
-            >Zobraziť na mape</v-btn
+            v-for="(item, i) in info"
+            :key="i"
+            >{{ item.title }}</v-btn
           >
-        </v-col>
-        <v-col cols="12" sm="6" md="4">
-          <h2 class="mx-4">Kontaktné informácie</h2>
-          <v-list bg-color="transparent" color="white" class="mb-6">
-            <v-list-item base-color="white" color="#fff" density="comfortable" v-for="tel in contact?.data.attributes.telephones">
-              <template v-slot:prepend>
-                <v-icon color="#fff" class="mr-2">mdi-phone</v-icon>
-              </template>
-              <v-list-item-title>{{ tel.item }}</v-list-item-title>
-            </v-list-item>
-            <v-list-item base-color="white" color="#fff" density="comfortable">
-              <template v-slot:prepend>
-                <v-icon color="#fff" class="mr-2">mdi-email</v-icon>
-              </template>
-              <v-list-item-title>{{ contact?.data.attributes.email }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-col>
-      </v-row>
-    </v-container>
+        </p>
+      </v-container>
+    </div>
   </footer>
 </template>
 
@@ -144,16 +167,17 @@ const menu: Menu[] = reactive([
 ]);
 
 const info: Menu[] = reactive([
+  { title: "Reklamačný poriadok", to: localePath(""), isReservation: false },
   { title: "Ochrana osobných údajov", to: localePath(""), isReservation: false },
   { title: "Cookies", to: localePath("apartmany"), isReservation: false },
 ]);
 </script>
 
 <style scoped lang="scss">
-footer {
+.footer {
   color: $white;
   background: $secondary-100;
-  padding: 30px 0;
+  padding-top: 30px;
 
   h2 {
     color: $white;
@@ -162,6 +186,11 @@ footer {
     font-size: 14px;
     white-space: initial;
     text-overflow: none;
+  }
+
+  &__bottom {
+    padding: 20px 0;
+    border-top: 1px solid $white;
   }
 }
 </style>
