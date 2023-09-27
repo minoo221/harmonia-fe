@@ -70,7 +70,7 @@
       <v-row>
         <v-col cols="12" md="4" class="pt-5 d-flex align-center">
           <NuxtLink to="/" class="d-block logo-cover">
-            <v-img src="/images/penzion_harmonia_logo.png" class="img-logo" width="380px"></v-img>
+            <v-img src="/images/penzion_harmonia_logo.png" class="img-logo" width="290px"></v-img>
           </NuxtLink>
         </v-col>
         <v-col cols="12" sm="6" md="3" offset-lg="1">
