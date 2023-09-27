@@ -1,7 +1,10 @@
 <template>
   <section class="main-info text-center">
     <h1 class="mb-4 title-bordered">{{ t("home.welcomeTitle") }}</h1>
-    <h3>{{ t("home.homeInfo") }}</h3>
+    <h3 class="mb-4">{{ t("home.homeInfo") }}</h3>
+    <v-btn exact class="mx-2" color="primary" link :to="localePath('rezervacia')" nuxt prepend-icon="mdi-calendar-month-outline">
+      Rezervácia
+    </v-btn>
   </section>
   <section class="gallery text-center">
     <h2 class="mb-4">{{ t("home.fromGallery") }}</h2>
