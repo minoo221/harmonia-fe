@@ -86,12 +86,12 @@
         </v-carousel-item>
       </v-carousel>
     </div>
-    <v-navigation-drawer v-model="drawer" temporary location="right" color="secondary">
+    <v-navigation-drawer v-model="drawer" temporary location="right" color="white" class="navigation" elevation-1>
       <div class="d-flex justify-end">
         <v-btn class="ml-auto" variant="text" size="x-large" icon="mdi-close" color="primary" @click="drawer = false"></v-btn>
       </div>
-      <v-list nav bg-color="transparent" density="compact" color="white">
-        <v-list-item v-for="(item, i) in menu" :key="i" :to="item.to" nuxt nav base-color="white" link color="#fff" exact>
+      <v-list nav bg-color="transparent" density="compact" color="secondary">
+        <v-list-item v-for="(item, i) in menu" :key="i" :to="item.to" nuxt nav base-color="secondary" link color="#fff" exact>
           <v-list-item-title v-text="item.title"></v-list-item-title>
         </v-list-item>
       </v-list>
@@ -214,6 +214,15 @@ onMounted(() => {
 }
 .header__bottom {
   position: relative;
+}
+.navigation {
+  &:deep {
+    .v-list-item--nav {
+      .v-list-item-title {
+        font-size: 20px;
+      }
+    }
+  }
 }
 .v-carousel {
   &:deep {

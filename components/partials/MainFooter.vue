@@ -76,10 +76,10 @@
           </v-col>
           <v-col cols="12" sm="6" md="3" offset-lg="1">
             <h2 class="mx-4">Adresa</h2>
-            <v-list bg-color="transparent" color="white" class="mb-6">
-              <v-list-item base-color="white" color="#fff" density="comfortable">
+            <v-list bg-color="transparent" class="mb-6">
+              <v-list-item density="comfortable">
                 <template v-slot:prepend>
-                  <v-icon color="#fff" class="mr-2">mdi-map-marker</v-icon>
+                  <v-icon class="mr-2">mdi-map-marker</v-icon>
                 </template>
                 <v-list-item-title
                   >{{ contact?.data.attributes.addressHome.address }}, <br />
@@ -91,7 +91,6 @@
             </v-list>
             <v-btn
               variant="plain"
-              color="white"
               class="text-subtitle-2 text-decoration-underline"
               link
               href="https://maps.app.goo.gl/geJQ3Yqf1Ue7absZ6"
@@ -101,21 +100,16 @@
           </v-col>
           <v-col cols="12" sm="6" md="4">
             <h2 class="mx-4">Kontaktné informácie</h2>
-            <v-list bg-color="transparent" color="white" class="mb-6">
-              <v-list-item
-                base-color="white"
-                color="#fff"
-                density="comfortable"
-                v-for="tel in contact?.data.attributes.telephones"
-              >
+            <v-list bg-color="transparent" class="mb-6">
+              <v-list-item density="comfortable" v-for="tel in contact?.data.attributes.telephones">
                 <template v-slot:prepend>
-                  <v-icon color="#fff" class="mr-2">mdi-phone</v-icon>
+                  <v-icon class="mr-2">mdi-phone</v-icon>
                 </template>
                 <v-list-item-title>{{ tel.item }}</v-list-item-title>
               </v-list-item>
-              <v-list-item base-color="white" color="#fff" density="comfortable">
+              <v-list-item color="#fff" density="comfortable">
                 <template v-slot:prepend>
-                  <v-icon color="#fff" class="mr-2">mdi-email</v-icon>
+                  <v-icon class="mr-2">mdi-email</v-icon>
                 </template>
                 <v-list-item-title>{{ contact?.data.attributes.email }}</v-list-item-title>
               </v-list-item>
@@ -128,15 +122,9 @@
       <v-container class="text-center">
         <p>© 2023 Penzión Harmónia.</p>
         <p class="mb-0">
-          <v-btn
-            variant="plain"
-            color="white"
-            class="text-subtitle-1 text-decoration-underline"
-            link
-            v-for="(item, i) in info"
-            :key="i"
-            >{{ item.title }}</v-btn
-          >
+          <v-btn variant="plain" class="text-subtitle-1 text-decoration-underline" link v-for="(item, i) in info" :key="i">{{
+            item.title
+          }}</v-btn>
         </p>
       </v-container>
     </div>
@@ -175,13 +163,8 @@ const info: Menu[] = reactive([
 
 <style scoped lang="scss">
 .footer {
-  color: $white;
-  background: $secondary-100;
   padding-top: 30px;
-
-  h2 {
-    color: $white;
-  }
+  border-top: 1px solid $secondary-80;
   .v-list-item-title {
     font-size: 14px;
     white-space: initial;
@@ -190,7 +173,7 @@ const info: Menu[] = reactive([
 
   &__bottom {
     padding: 20px 0;
-    border-top: 1px solid $white;
+    border-top: 1px solid $secondary-80;
   }
 }
 </style>

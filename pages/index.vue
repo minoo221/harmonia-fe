@@ -1,13 +1,13 @@
 <template>
   <section class="main-info text-center">
-    <h1 class="mb-4 title-bordered">{{ t("home.welcomeTitle") }}</h1>
-    <h3 class="mb-4">{{ t("home.homeInfo") }}</h3>
+    <h1 class="mb-8 title-bordered">{{ t("home.welcomeTitle") }}</h1>
+    <p class="mb-8">{{ t("home.homeInfo") }}</p>
     <v-btn exact class="mx-2" color="primary" link :to="localePath('rezervacia')" nuxt prepend-icon="mdi-calendar-month-outline">
       Rezervácia
     </v-btn>
   </section>
   <section class="gallery text-center">
-    <h2 class="mb-4">{{ t("home.fromGallery") }}</h2>
+    <h2 class="mb-4 title-bordered h1">{{ t("home.fromGallery") }}</h2>
     <v-slide-group class="pa-4" show-arrows>
       <!-- your additional content -->
       <!-- <template v-slot:silentbox-item="{ silentboxItem }">
@@ -15,7 +15,7 @@
         </template> -->
       <v-slide-group-item v-for="(item, index) in gallery?.data.attributes.gallery?.data">
         <div class="slide-item" @click="showGallery(index)">
-          <img :src="item.attributes.formats.small.url" />
+          <v-img cover :src="item.attributes.formats.small.url" />
         </div>
       </v-slide-group-item>
     </v-slide-group>
@@ -140,30 +140,35 @@ onMounted(() => {
   max-width: 740px;
   margin: 0 auto;
   margin-bottom: 80px;
+  p {
+    font-size: 18px;
+    line-height: 38px;
+  }
 }
 
 .gallery {
   padding: 45px 0;
-  color: $white;
-  background: $secondary-100;
-  h2 {
-    color: $white;
-  }
+  background-color: $white;
+  /*   border-top: 1px solid rgba($primary-80, 0.6);
+  border-bottom: 1px solid rgba($primary-80, 0.6); */
   .v-slide-group {
     &:deep {
       .slide-item {
         cursor: pointer;
-        padding: 0 20px;
-        height: 250px;
+        padding: 20px;
+        border: 1px solid rgba($primary-80, 0.6);
+        margin: 0 20px;
         overflow: hidden;
         @media (max-width: 600px) {
-          height: 150px;
           img {
             height: 100%;
           }
         }
         .v-img {
-          width: 450px;
+          width: 520px;
+          padding: 15px;
+          &:deep {
+          }
         }
       }
     }
