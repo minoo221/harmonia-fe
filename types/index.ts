@@ -16,7 +16,9 @@ export interface Apartment {
   kitchen?: string;
   locale?: string;
   titleImg?: any;
-  gallery?: any
+  gallery?: any;
+  Vybavenie?: any;
+  info?: string;
 }
 
 export interface Activity {

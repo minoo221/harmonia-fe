@@ -26,6 +26,7 @@
     "editorjs-html": "^3.4.3",
     "sass": "^1.62.1",
     "vue-easy-lightbox": "^1.16.0",
+    "vue-use-active-scroll": "^1.1.1",
     "vue3-google-map": "^0.15.0",
     "vuetify": "^3.3.0"
   }

@@ -4647,6 +4647,11 @@ vue-router@^4.2.3:
   dependencies:
     "@vue/devtools-api" "^6.5.0"
 
+vue-use-active-scroll@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-use-active-scroll/-/vue-use-active-scroll-1.1.1.tgz#62873256036675c89eabe8db2fae1a8766383a76"
+  integrity sha512-HSO/yho1UwLROUENOmW5wZWH7HmT3sKrnjtbc/8amI4TZKCBYovuVJiePIsYzz2oqZXS5EPt4gT5x5mVXATpYQ==
+
 vue3-google-map@^0.15.0:
   version "0.15.0"
   resolved "https://registry.npmjs.org/vue3-google-map/-/vue3-google-map-0.15.0.tgz"
