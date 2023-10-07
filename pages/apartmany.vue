@@ -562,6 +562,10 @@ onMounted(() => {
   .content-cover {
     max-width: 980px;
     margin-left: 340px;
+    @media (max-width: 780px) {
+      width: 100%;
+      margin-left: 0;
+    }
   }
   .link-text {
     height: 20px;
@@ -583,6 +587,10 @@ onMounted(() => {
   top: 110px;
   width: 320px;
   text-align: left;
+  @media (max-width: 780px) {
+    position: initial;
+    width: 100%;
+  }
   .v-list-item-title {
     font-size: 18px;
   }
