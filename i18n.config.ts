@@ -4,5 +4,5 @@ import en from "./locales/en.json";
 export default defineI18nConfig(() => ({
     legacy: false,
     locale: "sk",
-    messages: { en, sk },
+    messages: { sk },
 }));
