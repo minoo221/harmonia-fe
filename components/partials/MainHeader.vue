@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div class="header__top" :class="{ isScrolled: isScrolled, 'elevation-4': isScrolled }">
+    <div class="header__top">
       <div class="header-info d-none d-md-block">
         <v-container class="py-0">
           <v-row height="100%" align="center" justify="end" no-gutters>
@@ -15,6 +15,7 @@
                 variant="plain"
                 size="small"
                 v-for="tel in contact?.data.attributes.telephones"
+                :key="tel.id"
               >
                 {{ tel.item }}
               </v-btn>
@@ -91,7 +92,7 @@
         <v-btn class="ml-auto" variant="text" size="x-large" icon="mdi-close" color="primary" @click="drawer = false"></v-btn>
       </div>
       <v-list nav bg-color="transparent" density="compact" color="secondary">
-        <v-list-item v-for="(item, i) in menu" :key="i" :to="item.to" nuxt nav base-color="secondary" link color="#fff" exact>
+        <v-list-item v-for="(item, i) in menu" :key="i" :to="item.to" nuxt nav base-color="secondary" link exact>
           <v-list-item-title v-text="item.title"></v-list-item-title>
         </v-list-item>
       </v-list>

@@ -24,6 +24,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
     "editorjs-html": "^3.4.3",
+    "nuxt-swiper": "^1.2.2",
     "sass": "^1.62.1",
     "vue-easy-lightbox": "^1.16.0",
     "vue-use-active-scroll": "^1.1.1",

@@ -1,25 +1,49 @@
 <template>
-  <section class="main-info text-center">
-    <h1 class="mb-8 title-bordered">{{ t("home.welcomeTitle") }}</h1>
-    <p class="mb-8">{{ t("home.homeInfo") }}</p>
-    <v-btn exact class="mx-2" color="primary" link :to="localePath('rezervacia')" nuxt prepend-icon="mdi-calendar-month-outline">
-      Rezervácia
-    </v-btn>
-  </section>
-  <section class="gallery text-center">
-    <h2 class="mb-4 title-bordered h1">{{ t("home.fromGallery") }}</h2>
-    <v-slide-group class="pa-4" show-arrows>
-      <!-- your additional content -->
-      <!-- <template v-slot:silentbox-item="{ silentboxItem }">
-          <img :src="silentboxItem.url" />
-        </template> -->
-      <v-slide-group-item v-for="(item, index) in gallery?.data.attributes.gallery?.data">
-        <div class="slide-item" @click="showGallery(index)">
-          <v-img cover :src="item.attributes.formats.small.url" />
-        </div>
-      </v-slide-group-item>
-    </v-slide-group>
-    <!-- <v-slide-group class="pa-4" show-arrows>
+  <div>
+    <section class="main-info text-center">
+      <h1 class="mb-8 title-bordered">{{ t("home.welcomeTitle") }}</h1>
+      <p class="mb-8">{{ t("home.homeInfo") }}</p>
+      <v-btn
+        exact
+        class="mx-2"
+        color="primary"
+        link
+        :to="localePath('rezervacia')"
+        nuxt
+        prepend-icon="mdi-calendar-month-outline"
+      >
+        Rezervácia
+      </v-btn>
+    </section>
+    <section class="gallery text-center">
+      <h2 class="mb-4 title-bordered h1">{{ t("home.fromGallery") }}</h2>
+
+      <Swiper
+        :modules="[SwiperAutoplay]"
+        slides-per-view="auto"
+        :loop="true"
+        :navigation="true"
+        :autoplay="{
+          delay: 8000,
+          disableOnInteraction: true,
+        }"
+        :creative-effect="{
+          prev: {
+            shadow: false,
+            translate: ['-20%', 0, -1],
+          },
+          next: {
+            translate: ['100%', 0, 0],
+          },
+        }"
+      >
+        <SwiperSlide v-for="item in gallery?.data.attributes.gallery?.data" :key="item.id">
+          <div class="img-cover">
+            <img :src="item.attributes.formats.small.url" />
+          </div>
+        </SwiperSlide>
+      </Swiper>
+      <!-- <v-slide-group class="pa-4" show-arrows>
       <lightgallery :settings="{ speed: 300, controls: true }">
         <v-slide-group-item v-for="(slide, i) in slides" :key="i">
           <a class="gallery-item" :data-src="slide.src">
@@ -28,42 +52,43 @@
         </v-slide-group-item>
       </lightgallery>
     </v-slide-group> -->
-  </section>
-  <section class="reviews">
-    <v-container>
-      <v-row>
-        <v-col cols="12" md="4" v-for="item in reviews?.data" :key="item.id">
-          <v-card rounded="xl" elevation="8">
-            <v-card-title>{{ item.attributes.title }}</v-card-title>
-            <v-card-item class="py-0">
-              <v-rating
-                :model-value="item.attributes.rating"
-                color="amber"
-                density="compact"
-                half-increments
-                readonly
-                size="small"
-              ></v-rating>
-            </v-card-item>
-            <v-card-text class="py-2"> "{{ item.attributes.reviewText }}" </v-card-text>
+    </section>
+    <section class="reviews">
+      <v-container>
+        <v-row>
+          <v-col cols="12" md="4" v-for="item in reviews?.data" :key="item.id">
+            <v-card rounded="xl" elevation="8">
+              <v-card-title>{{ item.attributes.title }}</v-card-title>
+              <v-card-item class="py-0">
+                <v-rating
+                  :model-value="item.attributes.rating"
+                  color="amber"
+                  density="compact"
+                  half-increments
+                  readonly
+                  size="small"
+                ></v-rating>
+              </v-card-item>
+              <v-card-text class="py-2"> "{{ item.attributes.reviewText }}" </v-card-text>
 
-            <v-card-actions>
-              <v-list-item class="w-100">
-                <template v-slot:prepend>
-                  <v-icon class="mr-2" size="x-large" color="secondary" icon="mdi-account-circle"></v-icon>
-                </template>
+              <v-card-actions>
+                <v-list-item class="w-100">
+                  <template v-slot:prepend>
+                    <v-icon class="mr-2" size="x-large" color="secondary" icon="mdi-account-circle"></v-icon>
+                  </template>
 
-                <v-list-item-title>{{ item.attributes.name }}</v-list-item-title>
-              </v-list-item>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-    <client-only>
-      <vue-easy-lightbox :visible="isVisible" :imgs="images" :index="imgIndex" @hide="onHide"></vue-easy-lightbox>
-    </client-only>
-  </section>
+                  <v-list-item-title>{{ item.attributes.name }}</v-list-item-title>
+                </v-list-item>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+      <client-only>
+        <vue-easy-lightbox :visible="isVisible" :imgs="images" :index="imgIndex" @hide="onHide"></vue-easy-lightbox>
+      </client-only>
+    </section>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -151,25 +176,65 @@ onMounted(() => {
   background-color: $white;
   /*   border-top: 1px solid rgba($primary-80, 0.6);
   border-bottom: 1px solid rgba($primary-80, 0.6); */
-  .v-slide-group {
+  .swiper-slide {
+    cursor: pointer;
+    overflow: hidden;
+    width: 33.333%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 980px) {
+      width: 50%;
+    }
+    @media (max-width: 580px) {
+      width: 100%;
+    }
+    .img-cover {
+      position: relative;
+      border: 1px solid rgba($primary-80, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);
+      object-fit: cover;
+    }
+    img {
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);
+      object-fit: cover;
+      @media (max-width: 600px) {
+        img {
+          height: 100%;
+        }
+      }
+    }
     &:deep {
       .slide-item {
         cursor: pointer;
         padding: 20px;
         border: 1px solid rgba($primary-80, 0.6);
-        margin: 0 20px;
         overflow: hidden;
+        width: 33.333%;
+        margin: 0 20px;
         @media (max-width: 600px) {
           img {
             height: 100%;
           }
         }
-        .v-img {
-          width: 520px;
-          padding: 15px;
-          &:deep {
-          }
-        }
+      }
+    }
+  }
+  &:deep {
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: $white;
+      &:after {
+        font-size: 18px;
       }
     }
   }

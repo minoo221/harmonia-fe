@@ -36,6 +36,7 @@ export default defineNuxtConfig({
         "@pinia/nuxt",
         "@nuxtjs/i18n",
 		'@nuxtjs/strapi',
+		'nuxt-swiper'
     ],
 	runtimeConfig: {
 		public: {
@@ -58,4 +59,6 @@ export default defineNuxtConfig({
 			}
 		} */
     },
+
+
 });

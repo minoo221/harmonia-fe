@@ -31,193 +31,86 @@
   <section class="price-info">
     <v-container>
       <v-row>
-        <v-col cols="12" sm="6" md="4">
-          <h3 class="mb-4">Ubytovacie podmienky</h3>
-          <p>Check in (nástup na pobyt) - 14:<sup>00</sup> - 22:<sup>00</sup> - neskorší čas po nahlásení za extra príplatok</p>
-          <p>Check out (odhlásenie z pobytu) - do 10:<sup>00</sup> hod. - neskorší odchod len po dohode za extra príplatok</p>
-          <p>Domáce zvieratá - po dohode za príplatok</p>
-          <p>Všetky apartmány sú nefajčiarske, fajčenie je možné na terase.</p>
-        </v-col>
-        <v-col cols="12" sm="6" md="4">
-          <p></p>
-          <h3 class="mb-4">Platba</h3>
-          <p></p>
-          <p>Platba je možná hotovosti v EUR mene</p>
-          <p>Kreditnou kartou akceptujeme karty : Visa , Mastercard , Maestro</p>
-          <h3 class="my-4">Povinné poplatky</h3>
-          <p></p>
-          <p>daň z ubytovania 1 €/os/noc (neplatia deti do 10 rokov)</p>
-        </v-col>
-        <v-col cols="12" md="4">
-          <p></p>
-          <h3 class="mb-4">Cena zahŕňa</h3>
+        <v-col cols="12" md="6">
+          <h3 class="mb-2">Platba</h3>
           <v-list density="compact" bgColor="transparent" class="pt-0">
-            <v-list-item color="primary" class="pl-0">
+            <v-list-item color="primary" class="pl-0" v-for="pay in accommodation.data?.attributes.pay">
               <template v-slot:prepend>
                 <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
               </template>
-              <v-list-item-title>Nájom</v-list-item-title>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>celodenné parkovanie Vášho automobilu</v-list-item-title>
-            </v-list-item>
-
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>posteľné prádlo, uteráky, osušky (výmena na požiadanie), tekuté mydlo</v-list-item-title>
+              <v-list-item-title>{{ pay.item }}</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-col>
-        <v-col cols="12" md="4">
-          <p></p>
-          <h3 class="mb-4">Stravovanie</h3>
-          <p>Stravovanie umožňuje penzión v jedálni.</p>
-          <p>Rozšírené kontinentálne raňajky, večere pre skupiny.</p>
-          <v-list density="compact" bgColor="transparent">
-            <v-list-item color="primary" class="pl-0">
+        <v-col cols="12" md="6">
+          <h3 class="mb-2">Povinné poplatky</h3>
+          <v-list density="compact" bgColor="transparent" class="pt-0">
+            <v-list-item color="primary" class="pl-0" v-for="fee in accommodation.data?.attributes.fees">
               <template v-slot:prepend>
                 <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
               </template>
-              <v-list-item-title>Raňajky</v-list-item-title>
-              <template v-slot:append> 10&euro; / 1 os </template>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Raňajky dieťa 4 - 9 rokov</v-list-item-title>
-              <template v-slot:append> 6&euro; / os</template>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Raňajky dieťa 4 - 9 rokov</v-list-item-title>
-              <template v-slot:append> 6&euro; / os</template> </v-list-item
-            ><v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Večera</v-list-item-title>
-              <template v-slot:append> 12&euro; / os</template>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Večera dieťa 4 - 9 rokov</v-list-item-title>
-              <template v-slot:append> 8&euro; / os</template>
+              <v-list-item-title>{{ fee.item }}</v-list-item-title>
             </v-list-item>
           </v-list>
-          <p>Príprava vlastnej stravy</p>
-          <v-list-item color="primary" class="pl-0">
-            <template v-slot:prepend>
-              <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-            </template>
-            <v-list-item-title
-              >v kuchynskom kúte -vybaveným sklo keramickou doskou a potrebným kuchynským inventárom</v-list-item-title
-            >
-          </v-list-item>
-          <v-list-item color="primary" class="pl-0">
-            <template v-slot:prepend>
-              <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-            </template>
-            <v-list-item-title>na letnej terase – záhradný gril</v-list-item-title>
-          </v-list-item>
         </v-col>
-        <v-col cols="12" sm="6" md="4">
-          <h3 class="mb-4">Doplnkové vybavenie zariadenia</h3>
+        <v-col cols="12" md="6">
+          <h3 class="mb-2">Zľava z ubytovania</h3>
+          <v-list density="compact" bgColor="transparent" class="pt-0">
+            <v-list-item color="primary" class="pl-0" v-for="discount in accommodation.data?.attributes.discount">
+              <template v-slot:prepend>
+                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
+              </template>
+              <v-list-item-title>{{ discount.item }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
           <p>
-            Spoločenská miestnosť s kapacitou cca 30 miest, ktorá je zároveň stravovacou miestnosťou s barom, štýlovým krbom,
-            salónik s kapacitou 6 miest , vybavený kuchynským kútom letná terasa so záhradným grilom parkovisko s kapacitou 10 áut
+            <strong>{{ accommodation.data?.attributes.bestPrice }}</strong>
           </p>
-          <v-list density="compact" bgColor="transparent">
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Rozkladacia detská postieľka</v-list-item-title>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Letná terasa so záhradným nábytkom</v-list-item-title>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Objekt monitorovaný kamerovým systémom</v-list-item-title>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>WIFI</v-list-item-title>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Záhradný gril</v-list-item-title>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Stolný tenis</v-list-item-title>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Parkovisko</v-list-item-title>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Detské hračky</v-list-item-title>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Úschovňa bicyklov a lyží</v-list-item-title>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Informačný materiál </v-list-item-title>
-            </v-list-item>
-          </v-list>
         </v-col>
-        <v-col cols="12" sm="6" md="4">
-          <h3 class="mb-4">Individuálne služby</h3>
-          <v-list density="compact" bgColor="transparent">
-            <v-list-item color="primary" class="pl-0">
+        <v-col cols="12" md="6">
+          <h3 class="mb-2">Zľava z ubytovania</h3>
+          <v-list density="compact" bgColor="transparent" class="pt-0">
+            <v-list-item color="primary" class="pl-0" v-for="individualFee in accommodation.data?.attributes.individualFee">
               <template v-slot:prepend>
                 <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
               </template>
-              <v-list-item-title>KTX - od 10 roko </v-list-item-title>
-              <template v-slot:append> 1&euro; </template>
-            </v-list-item>
-            <v-list-item color="primary" class="pl-0">
-              <template v-slot:prepend>
-                <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
-              </template>
-              <v-list-item-title>Návšteva so psom – max. strednej výšky, jedno-rázový poplatok 15 EUR </v-list-item-title>
+              <v-list-item-title>{{ individualFee.title }}</v-list-item-title>
+              <template v-slot:append> {{ individualFee.val }}</template>
             </v-list-item>
           </v-list>
         </v-col>
       </v-row>
+    </v-container>
+  </section>
+  <section class="services">
+    <v-container>
+      <h2 class="h1 mb-4">Doplnkové služby</h2>
+      <div class="price-info">
+        <v-row>
+          <v-col cols="12">
+            <h3 class="mb-2">Štandardné služby zahrnuté v cene</h3>
+            <v-list density="compact" bgColor="transparent" class="pt-0">
+              <v-list-item color="primary" class="pl-0" v-for="freeService in accommodation.data?.attributes.freeServices">
+                <template v-slot:prepend>
+                  <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
+                </template>
+                <v-list-item-title>{{ freeService.item }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-col>
+          <v-col cols="12">
+            <h3 class="mb-2">Individuálne služby na Vaše želanie za poplatok</h3>
+            <v-list density="compact" bgColor="transparent" class="pt-0">
+              <v-list-item color="primary" class="pl-0" v-for="freeService in accommodation.data?.attributes.freeServices">
+                <template v-slot:prepend>
+                  <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
+                </template>
+                <v-list-item-title>{{ freeService.item }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-col>
+        </v-row>
+      </div>
     </v-container>
   </section>
 </template>
@@ -233,11 +126,17 @@ const isVisible: Ref<boolean> = ref(false);
 const index: Ref<number> = ref(0);
 const images: Ref<any> = ref([]);
 
-const { find } = useStrapi();
+const { find, findOne } = useStrapi();
 const { data: prices, refresh } = await useAsyncData("prices", () =>
   find<Price>("prices", {
     populate: "*",
     sort: "id",
+  })
+);
+
+const { data: accommodation, refresh: refreshAccomodation } = await useAsyncData("accommodation", () =>
+  findOne<Price>("accommodation", {
+    populate: "*",
   })
 );
 
