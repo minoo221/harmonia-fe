@@ -122,9 +122,15 @@
       <v-container class="text-center">
         <p>© 2023 Penzión Harmónia.</p>
         <p class="mb-0">
-          <v-btn variant="plain" class="text-subtitle-1 text-decoration-underline" link v-for="(item, i) in info" :key="i">{{
-            item.title
-          }}</v-btn>
+          <v-btn
+            variant="plain"
+            class="text-subtitle-1 text-decoration-underline"
+            link
+            :to="localePath({ name: 'sukromie-slug', params: { slug: item.attributes?.slug } })"
+            v-for="(item, i) in privacy?.data"
+            :key="i"
+            >{{ item.attributes.title }}</v-btn
+          >
         </p>
       </v-container>
     </div>
@@ -138,10 +144,15 @@ const switchLocalePath = useSwitchLocalePath();
 const localePath = useLocalePath();
 import type { Menu, Slider } from "~/types";
 const center: any = reactive({ lat: 49.10315253556189, lng: 19.59352807900453 });
+const route = useRoute();
 
 const { find } = useStrapi();
-const { data: contact, refresh } = await useAsyncData("contact-information", () =>
+const { data: contact, refresh: refreshContact } = await useAsyncData("contact-information", () =>
   find<any>("contact-information", { populate: "*" })
+);
+
+const { data: privacy, refresh: refreshPrivacy } = await useAsyncData("privacies", () =>
+  find<any>("privacies", { populate: "*" })
 );
 
 const menu: Menu[] = reactive([
@@ -159,6 +170,10 @@ const info: Menu[] = reactive([
   { title: "Ochrana osobných údajov", to: localePath(""), isReservation: false },
   { title: "Cookies", to: localePath("apartmany"), isReservation: false },
 ]);
+
+onMounted(() => {
+  console.log(route);
+});
 </script>
 
 <style scoped lang="scss">

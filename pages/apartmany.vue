@@ -173,7 +173,7 @@
                 </v-list>
               </v-col>
               <v-col cols="12" md="6">
-                <h3 class="mb-2">Zľava z ubytovania</h3>
+                <h3 class="mb-2">Individuálne poplatky:</h3>
                 <v-list density="compact" bgColor="transparent" class="pt-0">
                   <v-list-item color="primary" class="pl-0" v-for="individualFee in accommodation.data?.attributes.individualFee">
                     <template v-slot:prepend>
