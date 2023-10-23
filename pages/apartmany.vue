@@ -171,9 +171,6 @@
                     <v-list-item-title>{{ discount.item }}</v-list-item-title>
                   </v-list-item>
                 </v-list>
-                <p>
-                  <strong>{{ accommodation.data?.attributes.bestPrice }}</strong>
-                </p>
               </v-col>
               <v-col cols="12" md="6">
                 <h3 class="mb-2">Zľava z ubytovania</h3>
@@ -188,6 +185,9 @@
                 </v-list>
               </v-col>
             </v-row>
+            <div class="text-center">
+              <h3>{{ accommodation.data?.attributes.bestPrice }}</h3>
+            </div>
           </div>
         </div>
 
@@ -210,11 +210,11 @@
               <v-col cols="12">
                 <h3 class="mb-2">Individuálne služby na Vaše želanie za poplatok</h3>
                 <v-list density="compact" bgColor="transparent" class="pt-0">
-                  <v-list-item color="primary" class="pl-0" v-for="freeService in accommodation.data?.attributes.freeServices">
+                  <v-list-item color="primary" class="pl-0" v-for="paidService in accommodation.data?.attributes.paidServices">
                     <template v-slot:prepend>
                       <v-icon icon="mdi-square" size="x-small" color="primary" class="mr-1"></v-icon>
                     </template>
-                    <v-list-item-title>{{ freeService.item }}</v-list-item-title>
+                    <v-list-item-title>{{ paidService.item }}</v-list-item-title>
                   </v-list-item>
                 </v-list>
               </v-col>

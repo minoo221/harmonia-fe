@@ -76,7 +76,7 @@
           </v-col>
           <v-col cols="12" sm="6" md="3" offset-lg="1">
             <h2 class="mx-4">Adresa</h2>
-            <v-list bg-color="transparent" class="mb-6">
+            <v-list bg-color="transparent" class="mb-1">
               <v-list-item density="comfortable">
                 <template v-slot:prepend>
                   <v-icon class="mr-2">mdi-map-marker</v-icon>
@@ -163,7 +163,6 @@ const info: Menu[] = reactive([
 
 <style scoped lang="scss">
 .footer {
-  padding-top: 30px;
   border-top: 1px solid $secondary-80;
   .v-list-item-title {
     font-size: 14px;
