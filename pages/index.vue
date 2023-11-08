@@ -1,8 +1,8 @@
 <template>
   <div>
     <section class="main-info text-center">
-      <h1 class="mb-8 title-bordered">{{ t("home.welcomeTitle") }}</h1>
-      <p class="mb-8">{{ t("home.homeInfo") }}</p>
+      <h1 class="mb-8 title-bordered">{{ accommodation.data?.attributes.titleHome }}</h1>
+      <p class="mb-8">{{ accommodation.data?.attributes.infoHome }}</p>
       <v-btn
         exact
         class="mx-2"
@@ -110,6 +110,12 @@ const { data: gallery, refresh: refreshGalleries } = await useAsyncData("galleri
 );
 
 const { data: reviews, refresh: refreshReviews } = await useAsyncData("reviews", () => find<Review>("reviews"));
+
+const { data: accommodation, refresh: refreshAccomodation } = await useAsyncData("accommodation", () =>
+  findOne<any>("accommodation", {
+    populate: "*",
+  })
+);
 
 const slides: any[] = reactive([
   { title: "Jasná", src: "/images/jasna_leto_3.jpg" },

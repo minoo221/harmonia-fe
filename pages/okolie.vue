@@ -31,7 +31,7 @@
           </v-col>
         </v-row>
       </div>
-      <div>
+      <!--  <div>
         <h2 class="text-left mb-6">Poloha</h2>
         <p class="mb-4">
           Penzion Harmonia, s 2 hviezdičkami, sa nachadza v srdci Liptova, v Liptovskom Mikuláši – časť Ondrašová iba 2 km od
@@ -43,7 +43,7 @@
           vlastnú prípravu stravu zo strany hosti, je k dispozícii vybavený kuchynský kút s dvojplatničkou a kuchynskym
           inventárom.
         </p>
-      </div>
+      </div> -->
     </v-container>
     <v-dialog v-model="dialog" width="auto" max-width="480px">
       <v-card>
