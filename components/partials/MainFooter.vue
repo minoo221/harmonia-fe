@@ -69,12 +69,44 @@
     <div class="footer_top">
       <v-container>
         <v-row>
-          <v-col cols="12" md="4" class="pt-5 d-flex align-center">
-            <NuxtLink to="/" class="d-block logo-cover">
-              <v-img src="/images/penzion_harmonia_logo.png" class="img-logo" width="290px"></v-img>
-            </NuxtLink>
+          <v-col cols="12" md="3">
+            <h2 class="mx-4">Prevádzkovateľ</h2>
+            <h4 class="mx-4">Meno</h4>
+            <v-list bg-color="transparent" color="white" class="pt-0 mb-0">
+              <v-list-item density="comfortable" class="py-0">
+                <v-list-item-title>{{ contact?.data.attributes.name }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+            <h4 class="mx-4">IČO</h4>
+            <v-list bg-color="transparent" color="white" class="pt-0 mb-0">
+              <v-list-item density="comfortable" class="py-0">
+                <v-list-item-title>{{ contact?.data.attributes.ico }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+            <h4 class="mx-4">DIČ</h4>
+            <v-list bg-color="transparent" color="white" class="pt-0 mb-0">
+              <v-list-item density="comfortable" class="py-0">
+                <v-list-item-title>{{ contact?.data.attributes.dic }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
           </v-col>
-          <v-col cols="12" sm="6" md="3" offset-lg="1">
+          <v-col cols="12" md="3">
+            <h3 class="mx-4">Sídlo</h3>
+            <v-list bg-color="transparent" color="white" class="mb-6">
+              <v-list-item density="comfortable">
+                <template v-slot:prepend>
+                  <v-icon color="primary" class="mr-2">mdi-map-marker</v-icon>
+                </template>
+                <v-list-item-title
+                  >{{ contact?.data.attributes.addressCompany.address }}, <br />{{ contact?.data.attributes.addressCompany.zip }}
+                  {{ contact?.data.attributes.addressCompany.city }}
+                  <br />
+                  {{ contact?.data.attributes.addressCompany.country }}</v-list-item-title
+                >
+              </v-list-item>
+            </v-list>
+          </v-col>
+          <v-col cols="12" sm="6" md="3">
             <h2 class="mx-4">Adresa</h2>
             <v-list bg-color="transparent" class="mb-1">
               <v-list-item density="comfortable">
@@ -89,16 +121,22 @@
                 >
               </v-list-item>
             </v-list>
+            <v-list bg-color="transparent" color="white" class="pt-0 mb-0">
+              <v-list-item density="compact" class="py-0" min-height="24">
+                <v-list-item-title>{{ contact?.data.attributes.long }} {{ contact?.data.attributes.lat }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
             <v-btn
               variant="plain"
               class="text-subtitle-2 text-decoration-underline"
               link
               href="https://maps.app.goo.gl/geJQ3Yqf1Ue7absZ6"
               target="_blank"
+              color="primary"
               >Zobraziť na mape</v-btn
             >
           </v-col>
-          <v-col cols="12" sm="6" md="4">
+          <v-col cols="12" sm="6" md="3">
             <h2 class="mx-4">Kontaktné informácie</h2>
             <v-list bg-color="transparent" class="mb-6">
               <v-list-item density="comfortable" v-for="tel in contact?.data.attributes.telephones">
@@ -120,6 +158,10 @@
     </div>
     <div class="footer__bottom">
       <v-container class="text-center">
+        <NuxtLink to="/" class="logo-cover">
+          <v-img src="/images/penzion_harmonia_logo.png" class="img-logo" width="120px"></v-img>
+        </NuxtLink>
+
         <p>© 2023 Penzión Harmónia.</p>
         <p class="mb-0">
           <v-btn
