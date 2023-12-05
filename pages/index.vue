@@ -1,8 +1,12 @@
 <template>
   <div>
     <section class="main-info text-center">
-      <h1 class="mb-8 title-bordered">{{ accommodation.data?.attributes.titleHome }}</h1>
-      <p class="mb-8">{{ accommodation.data?.attributes.infoHome }}</p>
+      <h1 class="mb-8 title-bordered">{{ accommodation?.data.attributes.titleHome }}</h1>
+      <p class="mb-8">{{ accommodation?.data.attributes.infoHome }}</p>
+      <p class="mb-8">
+        <a href="https://www.megaubytovanie.sk/penzion-harmonia-liptovsky-mikulas">Penzión Harmónia</a> prezentuje svoje služby aj
+        na ubytovacom portáli <a href="https://www.megaubytovanie.sk/">MegaUbytovanie</a>.
+      </p>
       <v-btn
         exact
         class="mx-2"
@@ -164,6 +168,7 @@ onMounted(() => {
   store.setTitle(t("home.title"));
   console.log(store.title);
   console.log(gallery);
+  console.log("acccomodation", accommodation);
 });
 </script>
 <style scoped lang="scss">

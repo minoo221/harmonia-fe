@@ -36,6 +36,7 @@ export default defineNuxtConfig({
         "@pinia/nuxt",
         "@nuxtjs/i18n",
 		'@nuxtjs/strapi',
+		'@dargmuesli/nuxt-cookie-control',
 		'nuxt-swiper'
     ],
 	runtimeConfig: {
@@ -45,6 +46,38 @@ export default defineNuxtConfig({
 			},
 		}
 	},
+	cookieControl: {
+		colors: {
+			barBackground: '#ffffff',
+			checkboxActiveBackground: '#00A34A', // text-green-600
+			barButtonBackground: '#EF233C',
+			barButtonColor: '#ffffff',
+			barTextColor: "#000000",
+			modalBackground: '#ffffff',
+			modalButtonBackground: '#EF233C',
+			modalButtonColor: '#ffffff',
+			modalTextColor: '#000000',
+		},
+		closeModalOnClickOutside: true,
+		cookies: {
+			necessary: [
+				{
+				description:
+					"Tieto súbory cookie sú nevyhnutné na to, aby sme vám mohli poskytovať služby dostupné prostredníctvom našej webovej stránky a aby ste mohli používať určité funkcie našej webovej stránky. Bez týchto súborov cookie vám nemôžeme poskytnúť určité služby na našom webe.",
+				name:
+					'Nevyhnutne potrebné cookies',
+				targetCookieIds: ['NEC'],
+				links: {
+					'https://www.penzion-harmonia.sk/sukromie/ochrana-osobnych': 'Ochrana osobných údajov',
+					'https://www.penzion-harmonia.sk/sukromie/cookies': 'Cookies',
+				},
+        	},
+      ],
+    },
+	isCookieIdVisible: true,
+	isIframeBlocked: true,
+	locales: ['sk'],
+  },
     i18n: {
 		locales: ['sk'],  // used in URL path prefix
 		strategy: 'prefix_except_default',

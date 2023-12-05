@@ -158,7 +158,6 @@
       </v-row>
     </v-container>
   </section>
-  >
 </template>
 
 <script setup lang="ts">
