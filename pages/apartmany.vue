@@ -1,6 +1,6 @@
 <template>
   <section class="main-info text-center">
-    <v-container class="d-flex">
+    <v-container class="d-block d-sm-flex">
       <div class="nav">
         <v-list nav density="compact" color="white">
           <v-list-item
@@ -38,7 +38,7 @@
         <div class="accommodation" id="accommodation">
           <h2 class="link-text">Ponuka ubytovania</h2>
           <v-row class="mb-6">
-            <v-col cols="12" v-for="item in apartments?.data" :key="item.id">
+            <v-col cols="12" v-for="(item, index) in apartments?.data" :key="item.id">
               <v-card elevation="0" color="transparent">
                 <v-row>
                   <v-col cols="12" md="4">
@@ -388,6 +388,7 @@ function showGallery(index: number) {
   /* images.value = apartments[index].value.gallery; */
   console.log(images.value);
   console.log(apartments.value?.data[index].attributes.gallery.data);
+  console.log(index);
 
   const result = apartments.value?.data[index].attributes.gallery.data.map((obj: any) => {
     console.log(obj);
@@ -432,6 +433,7 @@ onMounted(() => {
   .content-cover {
     max-width: 980px;
     padding-left: 30px;
+    flex: 0 0 70%;
     @media (max-width: 780px) {
       width: 100%;
       padding-left: 30px;
@@ -471,7 +473,9 @@ onMounted(() => {
   position: sticky;
   left: 10px;
   top: 110px;
-  width: 320px;
+  max-width: 320px;
+  width: 100%;
+  flex: 0 0 30%;
   text-align: left;
   height: 250px;
   @media (max-width: 780px) {
